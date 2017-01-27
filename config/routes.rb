@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post 'pictures' => 'pictures#create' # Why don't I need the as: 'new' ?
   get 'pictures/new' => 'pictures#new' # Why don't I need the as: 'new' ?
 
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
+  get 'pictures/:id' => 'pictures#show', as: 'picture' # and why do i need it here?
+
+  get 'pictures/:id/edit' => 'pictures#edit', as: "edit_picture" # and here?
+  patch 'pictures/:id' => 'pictures#update'
 
 end
